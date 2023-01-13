@@ -1,0 +1,14 @@
+type: object
+properties:
+  id:
+    $ref: ./SplitCount-Id.yaml
+  title:
+    $ref: ./SplitCount-Title.yaml
+  desc:
+    $ref: ./SplitCount-Desc.yaml
+  by:
+    $ref: ./Name.yaml
+  'on':
+    $ref: ./Date.yaml
+  participants:
+    $ref: ./Participants.yaml

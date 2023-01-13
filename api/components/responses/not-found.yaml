@@ -1,0 +1,15 @@
+description: server cannot find the requested resource
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        error:
+          type: string
+        data: {}
+      example:
+        ok: false
+        error: 404 Not Found
+        data: null

@@ -1,0 +1,6 @@
+description: Expense object to be created or modified
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/ExpenseCU.yaml

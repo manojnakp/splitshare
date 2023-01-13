@@ -1,0 +1,38 @@
+parameters:
+  - name: id
+    in: path
+    description: unique id of splitcount
+    required: true
+    schema:
+      $ref: ../components/schemas/SplitCount-Id.yaml
+  - name: name
+    in: path
+    description: name to be removed from participants
+    required: true
+    schema:
+      $ref: ../components/schemas/Name.yaml
+delete:
+  tags:
+    - participant
+  summary: Delete a participant
+  description: delete `name` from the list of participants
+  operationId: deleteParticipant
+  responses:
+    '200':
+      description: deleted successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: boolean
+                example: true
+              error:
+                example: null
+              data:
+                example: null
+    '404':
+      $ref: ../components/responses/not-found.yaml
+    '500':
+      $ref: ../components/responses/server-error.yaml

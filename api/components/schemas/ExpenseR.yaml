@@ -1,0 +1,14 @@
+type: object
+properties:
+  id:
+    $ref: ./Expense-Id.yaml
+  name:
+    $ref: ./Expense-Name.yaml
+  amount:
+    $ref: ./Expense-Amount.yaml
+  by:
+    $ref: ./Expense-By.yaml
+  when:
+    $ref: ./Date.yaml
+  among:
+    $ref: ./Among.yaml

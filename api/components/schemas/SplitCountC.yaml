@@ -1,0 +1,10 @@
+type: object
+properties:
+  title:
+    $ref: ./SplitCount-Title.yaml
+  desc:
+    $ref: ./SplitCount-Desc.yaml
+  by:
+    $ref: ./Name.yaml
+  participants:
+    $ref: ./Participants.yaml

@@ -1,0 +1,66 @@
+parameters:
+  - name: id
+    in: path
+    description: unique id of splitcount
+    required: true
+    schema:
+      $ref: ../components/schemas/SplitCount-Id.yaml
+get:
+  tags:
+    - participant
+  summary: Participants of Splitcount
+  description: list all participants of the splitcount
+  operationId: getParticipants
+  responses:
+    '200':
+      description: request successful
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: boolean
+                example: true
+              error:
+                example: null
+              data:
+                $ref: ../components/schemas/Participants.yaml
+    '404':
+      $ref: ../components/responses/not-found.yaml
+    '500':
+      $ref: ../components/responses/server-error.yaml
+post:
+  tags:
+    - participant
+  summary: Add Participant
+  description: add one to the list of participants of the splitcount
+  operationId: addParticipant
+  requestBody:
+    description: Name to be added to the list of participants
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Name.yaml
+  responses:
+    '200':
+      description: request successful
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: boolean
+                example: true
+              error:
+                example: null
+              data:
+                $ref: ../components/schemas/Participants.yaml
+    '400':
+      $ref: ../components/responses/bad-req.yaml
+    '404':
+      $ref: ../components/responses/not-found.yaml
+    '500':
+      $ref: ../components/responses/server-error.yaml

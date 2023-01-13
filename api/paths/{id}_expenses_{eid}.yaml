@@ -1,0 +1,92 @@
+parameters:
+  - name: id
+    in: path
+    description: unique id of splitcount
+    required: true
+    schema:
+      $ref: ../components/schemas/SplitCount-Id.yaml
+  - name: eid
+    in: path
+    description: unique id of expense
+    required: true
+    schema:
+      $ref: ../components/schemas/Expense-Id.yaml
+get:
+  tags:
+    - expense
+  summary: Fetch Expense by id
+  description: fetch expense by id
+  operationId: getExpense
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: boolean
+                example: true
+              error:
+                example: null
+              data:
+                $ref: ../components/schemas/ExpenseR.yaml
+    '404':
+      $ref: ../components/responses/not-found.yaml
+    '500':
+      $ref: ../components/responses/server-error.yaml
+patch:
+  tags:
+    - expense
+  summary: Update Expense by id
+  description: update expense by id
+  operationId: updateExpense
+  requestBody:
+    $ref: ../components/requestBodies/Expense.yaml
+  responses:
+    '200':
+      description: updated successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: boolean
+                example: true
+              error:
+                example: null
+              data:
+                example: null
+    '400':
+      $ref: ../components/responses/bad-req.yaml
+    '404':
+      $ref: ../components/responses/not-found.yaml
+    '500':
+      $ref: ../components/responses/server-error.yaml
+delete:
+  tags:
+    - expense
+  summary: Delete Expense by id
+  description: delete expense by id
+  operationId: deleteExpense
+  responses:
+    '200':
+      description: deleted successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: boolean
+                example: true
+              error:
+                example: null
+              data:
+                example: null
+    '404':
+      $ref: ../components/responses/not-found.yaml
+    '500':
+      $ref: ../components/responses/server-error.yaml
