@@ -1,0 +1,8 @@
+type: array
+items:
+  type: number
+example:
+  - 120
+  - 60
+  - 60
+  - 60

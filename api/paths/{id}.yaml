@@ -1,0 +1,86 @@
+parameters:
+  - name: id
+    in: path
+    description: unique id of splitcount
+    required: true
+    schema:
+      $ref: ../components/schemas/SplitCount-Id.yaml
+get:
+  tags:
+    - splitcount
+  summary: Fetch Splitcount by id
+  description: fetch splitcount by id
+  operationId: getSplitCount
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: boolean
+                example: true
+              error:
+                example: null
+              data:
+                $ref: ../components/schemas/SplitCountR.yaml
+    '404':
+      $ref: ../components/responses/not-found.yaml
+    '500':
+      $ref: ../components/responses/server-error.yaml
+patch:
+  tags:
+    - splitcount
+  summary: Update Splitcount by id
+  description: update splitcount by id
+  operationId: updateSplitCount
+  requestBody:
+    $ref: ../components/requestBodies/SplitCount-PATCH.yaml
+  responses:
+    '200':
+      description: updated successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: boolean
+                example: true
+              error:
+                example: null
+              data:
+                example: null
+    '400':
+      $ref: ../components/responses/bad-req.yaml
+    '404':
+      $ref: ../components/responses/not-found.yaml
+    '500':
+      $ref: ../components/responses/server-error.yaml
+delete:
+  tags:
+    - splitcount
+  summary: Delete Splitcount by id
+  description: delete splitcount by id
+  operationId: deleteSplitCount
+  responses:
+    '200':
+      description: deleted successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: boolean
+                example: true
+              error:
+                example: null
+              data:
+                example: null
+    '404':
+      $ref: ../components/responses/not-found.yaml
+    '500':
+      $ref: ../components/responses/server-error.yaml

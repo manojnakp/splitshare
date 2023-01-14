@@ -1,0 +1,48 @@
+get:
+  summary: All splitcounts
+  operationId: getAllSplitcounts
+  tags:
+    - splitcount
+  responses:
+    '200':
+      description: 200 ok
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/SplitCountR'
+    '400':
+      $ref: '#/components/responses/bad-req'
+    '500':
+      $ref: '#/components/responses/server-error'
+post:
+  tags:
+    - splitcount
+  summary: Create new Splitcount
+  description: create new splitcount
+  operationId: newSplitCount
+  requestBody:
+    $ref: '#/components/requestBodies/SplitCount-POST'
+  responses:
+    '200':
+      description: created SplitCount successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: boolean
+                example: true
+              error:
+                example: null
+              data:
+                type: object
+                properties:
+                  id:
+                    $ref: '#/components/schemas/SplitCount-Id'
+    '400':
+      $ref: '#/components/responses/bad-req'
+    '500':
+      $ref: '#/components/responses/server-error'

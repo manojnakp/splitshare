@@ -1,0 +1,6 @@
+description: Splitcount object that needs to be created
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/SplitCountC.yaml

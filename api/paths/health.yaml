@@ -1,0 +1,28 @@
+get:
+  tags:
+    - other
+  summary: Check the server health status
+  description: Respond true or false
+  operationId: health
+  responses:
+    '200':
+      description: Server is running properly
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: boolean
+              error:
+                example: null
+              data:
+                example: null
+            example:
+              ok: true
+              error: null
+              data: null
+    '400':
+      $ref: ../components/responses/bad-req.yaml
+    '500':
+      $ref: ../components/responses/server-error.yaml

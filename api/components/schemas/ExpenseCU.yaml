@@ -1,0 +1,8 @@
+type: object
+properties:
+  name:
+    $ref: ./Expense-Name.yaml
+  by:
+    $ref: ./Expense-By.yaml
+  among:
+    $ref: ./Among.yaml

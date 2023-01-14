@@ -1,0 +1,32 @@
+parameters:
+  - name: id
+    in: path
+    description: unique id of splitcount
+    required: true
+    schema:
+      $ref: ../components/schemas/SplitCount-Id.yaml
+get:
+  tags:
+    - other
+  summary: Balance Expenses
+  description: Ways to balance the expenses shared among all participants
+  operationId: getBalances
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: boolean
+                example: true
+              error:
+                example: null
+              data:
+                $ref: ../components/schemas/Balance.yaml
+    '404':
+      $ref: ../components/responses/not-found.yaml
+    '500':
+      $ref: ../components/responses/server-error.yaml

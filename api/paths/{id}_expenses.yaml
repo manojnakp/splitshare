@@ -1,0 +1,57 @@
+parameters:
+  - name: id
+    in: path
+    description: unique id of splitcount
+    required: true
+    schema:
+      $ref: ../components/schemas/SplitCount-Id.yaml
+get:
+  summary: All Expenses
+  operationId: getAllExpenses
+  tags:
+    - expense
+  responses:
+    '200':
+      description: 200 ok
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../components/schemas/ExpenseR.yaml
+    '404':
+      $ref: ../components/responses/not-found.yaml
+    '500':
+      $ref: ../components/responses/server-error.yaml
+post:
+  tags:
+    - expense
+  summary: Create new Expense
+  description: create new expense
+  operationId: newExpense
+  requestBody:
+    $ref: ../components/requestBodies/Expense.yaml
+  responses:
+    '200':
+      description: created Expense successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: boolean
+                example: true
+              error:
+                example: null
+              data:
+                type: object
+                properties:
+                  id:
+                    $ref: ../components/schemas/Expense-Id.yaml
+    '400':
+      $ref: ../components/responses/bad-req.yaml
+    '404':
+      $ref: ../components/responses/not-found.yaml
+    '500':
+      $ref: ../components/responses/server-error.yaml

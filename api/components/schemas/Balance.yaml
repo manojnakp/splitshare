@@ -1,0 +1,11 @@
+type: object
+properties:
+  from:
+    type: string
+    example: Alex
+  to:
+    type: string
+    example: Julia
+  amount:
+    type: number
+    example: 250
