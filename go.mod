@@ -1,4 +1,4 @@
-module github.com/manojnakp/splitup
+module github.com/manojnakp/splitshare
 
 go 1.19
 

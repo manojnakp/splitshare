@@ -1,10 +1,10 @@
 openapi: 3.0.3
 info:
-  title: Splitup
+  title: Splitshare
   description: App to share expenses among friends
   contact:
-    name: Splitup Dev Team
-    url: https://github.com/manojnakp/splitup/issues
+    name: Splitshare Dev Team
+    url: https://github.com/manojnakp/splitshare/issues
     email: manojna.gopher@gmail.com
   license:
     name: MIT license
