@@ -1,16 +1,10 @@
 package db
 
 import (
-	"errors"
 	"github.com/manojnakp/splitshare/pkg/component"
 )
 
 var _ Collection = &SCollection{}
-
-var (
-	ErrNotFound    = errors.New("record not found")
-	ErrInvalidType = errors.New("invalid splitcount")
-)
 
 type SCollection []*component.SplitCount
 
